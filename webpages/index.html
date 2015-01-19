@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html server>
+	<head>
+		<title>Page title here</title>
+	</head>
+	<body>
+		<panel server id="pnlMembers">
+			<h1>Members</h1>
+			<loop server id="lpMembers">
+				<span id="pMemberName"></span>
+				<button server id="btnView">View Posts</button>
+				<button server id="btnDelete">Delete</button>
+				<br />
+			</loop>
+			
+			<br />
+			<validationGroup server>
+				<h2>Add new member</h2>
+				Name: <textbox server id="tbxName" />
+				<validator:required server control="tbxName">
+					Please enter a name
+				</validator:required>
+
+				<br />
+				Age: <textbox server id="tbxAge" />
+				<validator:required server control="tbxAge">
+					Please enter an age
+				</validator:required>
+				<validator:range server control="tbxAge" min="0" max="120">
+					Please enter a valid age
+				</validator:range>
+				<button server id="btnNewMember" causesvalidation>Add new member</button>
+			</validationGroup>
+		</panel>
+
+		<panel server id="pnlPosts" visible="false">
+			<h1 id="h1MemberName"></h1>
+		</panel>
+	</body>
+</html>
