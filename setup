@@ -1,0 +1,8 @@
+cd "$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+git clone https://github.com/tornadoweb/tornado.git
+mv tornado tornado_project
+mv tornado_project/tornado tornado
+rm -rf tornado_project
+
+
