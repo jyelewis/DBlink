@@ -1,8 +1,17 @@
 cd "$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-git clone https://github.com/tornadoweb/tornado.git
-mv tornado tornado_project
+#install tornado
+pip install --target=$(pwd)/tornado_project tornado
 mv tornado_project/tornado tornado
 rm -rf tornado_project
 
+#download pyforms from github
+git clone https://github.com/jyelewis/pyForms
+mv pyForms pyForms_project
+mv pyForms_project/pyForms pyForms
+rm -rf pyForms_project
 
+#pip install SQLAlchemy
+pip install --target=$(pwd)/sqlalchemy_project sqlalchemy
+mv sqlalchemy_project/sqlalchemy sqlalchemy
+rm -rf sqlalchemy_project
